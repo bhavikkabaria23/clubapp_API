@@ -1,0 +1,8 @@
+{
+  "enum": {
+    "1": "Attack : #7, #9, or #11",
+    "2": "Midfield : #6, #8, or #10",
+    "3": "Defence : #2, #3, #4, or #5",
+    "4": "Goal Keeper : #1"
+  }
+}

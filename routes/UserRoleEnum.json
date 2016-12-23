@@ -1,0 +1,9 @@
+{
+    "enum": {
+        "1": "Root",
+        "2": "Admin",
+        "3": "Coach",
+        "4": "Technical_Director",
+        "5": "Player"
+    }
+}

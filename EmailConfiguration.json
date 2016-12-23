@@ -1,0 +1,14 @@
+{
+    "smtp": {
+        "user": "AKIAJW4D2HMEUL4BF7DQ",
+        "password": "kfiBPS7hZQaAKZy17vGH5S39Xm3AyaH8MfFaku0T",
+        "host": "email-smtp.us-east-1.amazonaws.com",
+        "ssl": "true",
+        "port": "465"
+    },
+    "email": {
+        "subject": "GRMFC Trial Registration Confirmation",
+        "fromEmail": "admin@grmfc.com",
+        "bcc": "bhavik.kabaria@gravityfusion.com"
+    }
+}

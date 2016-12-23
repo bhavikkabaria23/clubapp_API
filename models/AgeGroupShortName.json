@@ -1,0 +1,15 @@
+{
+  "enum": {
+    "Under 9s": "U09",
+    "Under 10s": "U10",
+    "Under 11s": "U11",
+    "Under 12s": "U12",
+    "Under 13s": "U13",
+    "Under 14s": "U14",
+    "Under 15s": "U15",
+    "Under 16s": "U16",
+    "Under 18s": "U18",
+    "Under 20s": "U20",
+    "1st Grade": "FG"
+  }
+}

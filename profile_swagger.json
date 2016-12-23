@@ -1,0 +1,652 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Member Profile System",
+    "description": "Membership system for Fusion Products",
+    "version": "1.0.0"
+  },
+  "host": "localhost",
+  "schemes": [
+    "https"
+  ],
+  "basePath": "/api",
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/product_owners": {
+      "get": {
+        "summary": "Get all product owners",
+        "description": "The product owners endpoint returns a collection of `ProductOwner` objects.\n",
+        "tags": [
+          "ProductOwner"
+        ],
+        "responses": {
+          "200": {
+            "description": "An array of product owners",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/ProductOwner"
+              }
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/product_owner/{productOwner_id}": {
+      "get": {
+        "summary": "Get a particular product owner by id",
+        "description": "The product owner endpoint returns a `ProductOwner` objects.\n",
+        "parameters": [
+          {
+            "name": "productOwner_id",
+            "in": "path",
+            "description": "The product owner id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "ProductOwner"
+        ],
+        "responses": {
+          "200": {
+            "description": "A product owner",
+            "schema": {
+              "$ref": "#/definitions/ProductOwner"
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "delete": {
+        "summary": "Delete a product owner",
+        "description": "Delete a product owner",
+        "parameters": [
+          {
+            "name": "productOwner_id",
+            "in": "path",
+            "description": "The product owner id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "ProductOwner"
+        ],
+        "responses": {
+          "200": {
+            "description": "Product owner deleted successfully."
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/product_owner": {
+      "post": {
+        "tags": [
+          "ProductOwner"
+        ],
+        "summary": "Add a new product owner",
+        "description": "Add a new product owner",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "ProductOwner object that needs to be added",
+            "required": true,
+            "schema": { "$ref": "#/definitions/ProductOwner" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ProductOwner owner added successfully."
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "ProductOwner"
+        ],
+        "summary": "Update a product owner",
+        "description": "Update a product owner",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "ProductOwner object that needs to be updated",
+            "required": true,
+            "schema": { "$ref": "#/definitions/ProductOwner" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Product owner updated successfully."
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/members": {
+      "get": {
+        "summary": "Get all Members",
+        "description": "The members endpoint returns a collection of `Member` objects.\n",
+        "parameters": [
+          {
+            "name": "key",
+            "in": "header",
+            "description": "The product key assigned to the product.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "secret",
+            "in": "header",
+            "description": "The secret assigned to the product to execute",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "Member"
+        ],
+        "responses": {
+          "200": {
+            "description": "An array of members",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Member"
+              }
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/member/{member_id}": {
+      "get": {
+        "summary": "Get a particular Member",
+        "description": "The member endpoint returns a `Member` objects.\n",
+        "parameters": [
+          {
+            "name": "key",
+            "in": "header",
+            "description": "The product key assigned to the product.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "secret",
+            "in": "header",
+            "description": "The secret assigned to the product to execute",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "member_id",
+            "in": "path",
+            "description": "The member id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "Member"
+        ],
+        "responses": {
+          "200": {
+            "description": "A Member",
+            "schema": {
+              "$ref": "#/definitions/Member"
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "delete": {
+        "summary": "Delete a member by product owner",
+        "description": "Delete a member by product owner",
+        "parameters": [
+          {
+            "name": "member_id",
+            "in": "path",
+            "description": "The member id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "Member"
+        ],
+        "responses": {
+          "200": {
+            "description": "Member deleted successfully."
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/member": {
+      "post": {
+        "tags": [
+          "Member"
+        ],
+        "summary": "Sign up for a member",
+        "description": "Signup for a user / member is via an email and password. The system sends acode to the user via the email to verify the user in the system.",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Member signed up for the product",
+            "required": true,
+            "schema": { "$ref": "#/definitions/Member" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Member profile created successfully and verification code to be sent.",
+            "schema": {
+              "$ref": "#/definitions/Verification"
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Member"
+        ],
+        "summary": "Update member information",
+        "description": "Member information can be updated by member or product owner",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Member object that needs to be updated",
+            "required": true,
+            "schema": { "$ref": "#/definitions/Member" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Member profile created successfully and verification code to be sent.",
+            "schema": {
+              "$ref": "#/definitions/Verification"
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/member/searchBySearchTerm": {
+      "get": {
+        "summary": "Saerch member by Search term (Search term can be email, name, username etc.)",
+        "description": "The member endpoint returns a `Member` objects matched to search criteria.\n",
+        "parameters": [
+          {
+            "name": "SearchTerm",
+            "in": "header",
+            "description": "Search term related to the member",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "Member"
+        ],
+        "responses": {
+          "200": {
+            "description": "An array of members falls to search criteria",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Member"
+              }
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/products/{productOwner_id}": {
+      "get": {
+        "summary": "Get all Products of product owner",
+        "description": "The products endpoint returns a collection of `Product` objects.\n",
+        "parameters": [
+          {
+            "name": "productOwner_id",
+            "in": "path",
+            "description": "The product key / id assigned to the product.",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "Product"
+        ],
+        "responses": {
+          "200": {
+            "description": "An array of products",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Product"
+              }
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/product/{product_id}": {
+      "get": {
+        "summary": "Get a particular product by id",
+        "description": "The product endpoint returns a `Product` objects.\n",
+        "parameters": [
+          {
+            "name": "product_id",
+            "in": "path",
+            "description": "The product id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "Product"
+        ],
+        "responses": {
+          "200": {
+            "description": "A Product",
+            "schema": {
+              "$ref": "#/definitions/Product"
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "delete": {
+        "summary": "Delete a product by product owner",
+        "description": "Delete a product by product owner",
+        "parameters": [
+          {
+            "name": "product_id",
+            "in": "path",
+            "description": "The product id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "Product"
+        ],
+        "responses": {
+          "200": {
+            "description": "Product deleted successfully."
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/product": {
+      "post": {
+        "tags": [
+          "Product"
+        ],
+        "summary": "Add a new product by product owner",
+        "description": "Add a new product by product owner",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Product object that needs to be added",
+            "required": true,
+            "schema": { "$ref": "#/definitions/Product" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Product added successfully."
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Product"
+        ],
+        "summary": "Update a product by product owner",
+        "description": "Update a product by product owner",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Product object that needs to be updated",
+            "required": true,
+            "schema": { "$ref": "#/definitions/Product" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Product updated successfully."
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "ProductOwner": {
+      "type": "object",
+      "properties": {
+        "productOwner_id": {
+          "type": "string",
+          "description": "Unique identifier representing a specific product owner."
+        },
+        "username": {
+          "type": "string",
+          "description": "Member username."
+        },
+        "email": {
+          "type": "string",
+          "description": "Product owner email."
+        },
+        "password": {
+          "type": "string",
+          "description": "Member password."
+        },
+        "profile": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Profile_Property"
+          },
+          "description": "Customisable profile json."
+        },
+        "image": {
+          "type": "string",
+          "description": "Image URL representing the product owner."
+        }
+      }
+    },
+    "Member": {
+      "type": "object",
+      "properties": {
+        "member_id": {
+          "type": "string",
+          "description": "Unique identifier representing a specific member for a given product."
+        },
+        "product_id": {
+          "type": "string",
+          "description": "Representing a product for which member is going to signup"
+        },
+        "username": {
+          "type": "string",
+          "description": "Member username."
+        },
+        "email": {
+          "type": "string",
+          "description": "Member email."
+        },
+        "password": {
+          "type": "string",
+          "description": "Member password."
+        },
+        "profile": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Profile_Property"
+          },
+          "description": "Customisable profile json."
+        },
+        "image": {
+          "type": "string",
+          "description": "Image URL representing the member."
+        }
+      }
+    },
+    "Profile_Property": {
+      "type": "object",
+      "properties": {
+        "label": {
+          "type": "string",
+          "description": "The JSON label/key for the profile field"
+        },
+        "value": {
+          "type": "string",
+          "description": "The value of the JSON field"
+        }
+      }
+    },
+    "Error": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "fields": {
+          "type": "string"
+        }
+      }
+    },
+    "Verification": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string"
+        }
+      }
+    },
+    "Product": {
+      "type": "object",
+      "properties": {
+        "product_id": {
+          "type": "string",
+          "description": "Unique identifier representing all products for a given member."
+        },
+        "productOwner_id": {
+          "type": "string",
+          "description": "representing a specific product owner of the product."
+        },
+        "name": {
+          "type": "string",
+          "description": "Product name"
+        },
+        "description": {
+          "type": "string",
+          "description": "Decription of the product"
+        },
+        "image": {
+          "type": "string",
+          "description": "Image URL representing the product."
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+</head>
+
+<body>
+    <p>Dear {{Salutation}},</p>
+    <p>Thank you for registering to trial with Gladesville Ryde Magic FC.&nbsp; Please find attached a copy of the details you have submitted.</p>
+    <p><strong><u>Your Registration Number is&nbsp; - {{PlayerID}}</u></strong></p>
+    <p>Your Registration Number will be required when you attend trials.</p>
+    <p>You will be required to attend GRMFC trials at the following time and location.&nbsp; Please ensure you attend with the appropriate football gear including shin pads and water bottle.</p>
+    <p/>
+    <p><u>{{trialLocation}}</u></p>
+   {{trial}}
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>We look forward to greeting you at the trials and wish you every success; above all, remember to enjoy yourself and appreciate the experience.</p>
+    <p>Best regards,</p>
+    <p><strong><u>The Team at GRMFC</u></strong></p>
+
+    <h2>Details Provided</h2>
+<pre>
+Details
+=======
+Player Name                      {{PlayerName}}
+FFANumber:                       {{fFANumber}}
+Date of Birth:                   {{birthDate}}
+Address:                         {{residentialAddress}}
+Home Phone:                      {{homeNumber}}
+Mobile Number:                   {{mobileNumber}}
+Email:                           {{email}}
+Gender:                          {{gender}}
+Preferred PlayingPosition:       {{preferredPlayingPosition}}
+Age Group:                       {{ageGroup}}
+Objectives and Ambitions:        {{objectivesAmbitions}}
+
+Contact Person 1
+================
+Contact Person Name:             {{contactPerson1.personName}}
+Contact Person Relationship:     {{contactPerson1.relationship}}
+Contact Person Phone:            {{contactPerson1.contactNumber}}
+Contact Person Email:            {{contactPerson1.email}}
+
+Contact Person 2
+================
+Contact Person Name:             {{contactPerson2.personName}}
+Contact Person Relationship:     {{contactPerson2.relationship}}
+Contact Person Phone:            {{contactPerson2.contactNumber}}
+Contact Person Email:            {{contactPerson2.email}}
+
+Study/Work Details
+===================
+Details of School:               {{studyWorkDetails.schoolDetails}}
+Details of Employment:           {{studyWorkDetails.employementDetails}}
+
+Playing History
+===============
+Previous Club (2016):            {{playingHistory.previousClub2016}}
+Previous Club (2015):            {{playingHistory.previousClub2015}}
+Details of Current Suspensions:  {{playingHistory.suspensionsDetails}}
+Details of Injuries:             {{playingHistory.injuriesDetails}}
+
+Football Academy Details
+========================
+Head Coach:                      {{footballAcademyDetails.headCoachName}}
+Contact Details:                 {{footballAcademyDetails.contactDetails}}
+Sessions Per Week:               {{footballAcademyDetails.academicSessionPerWeekCount}}
+
+Details of Football Trips
+-------------------------
+Arranged By:                     {{footballAcademyDetails.arrangedBy}}
+Destination:                     {{footballAcademyDetails.destination}}
+Purpose of Trip:                 {{footballAcademyDetails.purposeOfTrip}}
+
+</pre>
+
+</body>
+
+</html>

@@ -1,0 +1,23 @@
+# Language setting
+language: node_js
+
+# Version number
+node_js:
+  - 6.2.1
+
+build:
+  
+  pre_ci:
+    - echo "This is master branch"
+
+  ci:
+    - npm install
+
+  post_ci:
+    - ls -a
+    - pwd
+
+  cache: true
+
+  cache_dir_list: 
+    - $SHIPPABLE_BUILD_DIR/node_modules

@@ -1,0 +1,59 @@
+{
+  "path": {
+    "products_model": "./models/Products",
+    "skills_model": "./models/Skills",
+    "assessment_model": "./models/Assessment",
+    "services_model": "./models/Services",
+    "members_model": "./models/Member",
+    "ageGroup_model": "./models/registration/AgeGroup",
+    "contactPerson_model": "./models/registration/ContactPerson",
+    "playingHistory_model": "./models/registration/PlayingHistory",
+    "studyWorkDetail_model": "./models/registration/StudyWorkDetail",
+    "footballAcademyDetails_model": "./models/registration/FootballAcademyDetails",
+    "registration_model": "./models/registration/BasicDetails",
+    "playerprofile_model": "./models/PlayerProfile/PlayerProfile",
+    "coachProfile_model": "./models/Coach/CoachProfile",
+    "session_model": "./models/Session/Session",
+    "users_model": "./models/Users",
+    "owners_model": "./models/Owner",
+    "passport_config": "./config/passport",
+    "index": "./routes/index",
+    "service": "./routes/service",
+    "skills": "./routes/skills",
+    "assessment": "./routes/assessment",
+    "member": "./routes/member",
+    "registration": "./routes/registration",
+    "owner": "./routes/owner",
+    "users": "./routes/users",
+    "coach": "./routes/coach",
+    "playerprofile": "./routes/playerProfile",
+    "session": "./routes/session"
+  },
+  "message": {
+    "app_not_fount": "App not found.",
+    "app_start": "Profile app started at : ",
+    "mongodb_connection_error": "MongoDB Connection Error. Please make sure that MongoDB is running.",
+    "incorrect_username": "Incorrect username.",
+    "incorrect_password": "Incorrect password.",
+    "blank_fields": "Please fill out all fields.",
+    "coach_registered": "Coach registered successfully.",
+    "coach_updated": "Coach updated successfully.",
+    "duplicateEmail": "duplicateEmail"
+  },
+  "system": {
+    "defaultPort": 3000
+  },
+  "route": {
+    "home": "/",
+    "users": "/users",
+    "owners": "/owners",
+    "members": "/members",
+    "registration": "/registration",
+    "coach": "/coach",
+    "assessments": "/assessment",
+    "playerprofile": "/playerprofile",
+    "sessions": "/sessions",
+    "skills": "/skills"
+  }
+
+}
